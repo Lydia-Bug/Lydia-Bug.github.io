@@ -1,4 +1,5 @@
 window.onload = function() {
+    
     ctx = canvas.getContext("2d"),
      mX = 0,
      mY = 0,
