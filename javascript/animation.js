@@ -48,7 +48,7 @@ window.onload = function() {
      this.centerY = (this.centerY-this.radius/2);
 
      var opacity = 1-0.01*n;
-     this.color = "rgba(255,0,255,+"+opacity+")";
+     this.color = "rgba(255,255,255,+"+opacity+")";
  }
  
  Ball.prototype.update = function (x, y) {
