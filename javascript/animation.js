@@ -3,28 +3,16 @@ window.onload = function() {
     ctx = canvas.getContext("2d"),
      mX = 0,
      mY = 0,
-     started = false,
+     started = true,
  
      canvas.width = window.innerWidth;
      canvas.height = window.innerHeight;
- 
  
  canvas.addEventListener("mousemove", function (e) {
      mX = e.pageX;
      mY = e.pageY;
  });
- 
- canvas.addEventListener("mouseenter", function (e) {
-     if(!started){
-         started = true;
-         render();
-     }
- });
- 
- canvas.addEventListener("mouseleave", function (e) {
-     started = false;
- });
- 
+
  function resize(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -109,14 +97,7 @@ window.onload = function() {
       ctx.fill();
  
     resize();
-/*
-     ball1.update(mX, mY);
-     ball1.render();
-     ball2.update(mX, mY);
-     ball2.render();
-     ball3.update(mX, mY);
-     ball3.render();
- */
+
      for(let i = 0; i < balls.length; i++){
         balls[i].update(mX, mY);
         balls[i].render();
@@ -131,11 +112,6 @@ window.onload = function() {
  for(let i = 1; i < 100; i++){
     balls.push(new Ball(10, 1, 4, i));
  }
- /*
- var ball1 = new Ball(20, "green", 5, 30, 1);
- var ball2 = new Ball(20, "white", 5, 30, 2);
- var ball3 = new Ball(20, "pink", 5, 30, 3);
- */
  
  render();
  
