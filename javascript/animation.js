@@ -27,7 +27,7 @@ window.onload = function() {
     this.displacementY;
 
     var opacity = 1-0.005*n;
-    this.color = "rgba(255,255,255,+"+opacity+")";
+    this.color = "rgba(115,100,125,+"+opacity+")";
  }
  
  Ball.prototype.update = function (mX, mY) {
@@ -85,8 +85,8 @@ function render() {
 }
  
 var balls = [];
-for(let i = 1; i < 500; i++){
-    balls.push(new Ball(10, 1, 0.0001, 3, i));
+for(let i = 1; i < 200; i++){
+    balls.push(new Ball(10, 1, 0.00005, 3, i));
 }
  
 render();
