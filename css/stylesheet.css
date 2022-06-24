@@ -118,6 +118,10 @@ canvas {
     background-color: #bf61d8;
   }
 
+a{
+    text-decoration: none;
+}
+
 .accent{
     color: #d67af0;
 }
