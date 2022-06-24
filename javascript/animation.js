@@ -26,6 +26,10 @@ window.onload = function() {
     this.displacementX;
     this.displacementY;
 
+    //previous speed X and Y
+    this.psX = 0;
+    this.psY = 0;
+
     var opacity = 1-0.005*n;
     this.color = "rgba(115,100,125,+"+opacity+")";
  }
@@ -37,12 +41,19 @@ window.onload = function() {
     var divideBy = hypotenuse/this.followingSpeed;
     this.speedX = (mX-this.centerX)/divideBy;
     this.speedY = (mY-this.centerY)/divideBy;
+    if(Math.abs(this.speedX-this.psX) > 1*this.followingSpeed){
+        this.speedX = this.psX + 0.1*this.speedX;
+    }
+    if(Math.abs(this.speedY-this.psY) > 1*this.followingSpeed){
+        this.speedY = this.psY + 0.1*this.speedY;
+    }
     //if pattern is already at mouse, it won't move (without this it kinda glitches)
     if(hypotenuse > this.followingSpeed/2){
         this.centerX += this.speedX;
         this.centerY += this.speedY;
     }
-
+    this.psX = this.speedX;
+    this.psY = this.speedY;
     //updates angle
     this.angle += this.angularSpeed;
     var angleDisplacement = this.angle * this.n;
