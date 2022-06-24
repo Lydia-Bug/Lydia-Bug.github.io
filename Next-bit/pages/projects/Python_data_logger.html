@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../../styleSheets/main.css"> 
+<link rel="stylesheet" type="text/css" href="../../styleSheets/project.css"> 
+<link rel="stylesheet" type="text/css" href="../../styleSheets/code.css"> 	
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Ubuntu&display=swap" rel="stylesheet"> <!-- Links to goolgle fonts, font -->
+<link rel="shortcut icon" href="../../images/logo.png" /> <!-- Puts logo on tab -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+
+<title>Next:bit | Python data logger</title>
+</head>
+
+<body onload="whenLoaded()">
+	<header>
+		<div><a href="../../index.html"><img src="../../images/logo.png" class="logo" alt="logo"></a></div>
+		<h1 id="title">Next:Bit</h1>
+		<div id = "navbar_links">
+			<a class="text" href="../projects.html" >Projects</a>
+			<span>|</span>
+			<a class="text" href="../learn.html" >Learn</a>
+		</div>
+	</header>
+	
+	    <div class="box">
+			<div id="top" class="text">
+				<h1>Python data logger</h1>
+				<p>Use micro:bit as a wireless data logger recording readings from its sensors.</p>
+			</div>
+	    </div>
+		
+		<div class="box" id="bottomImg">
+		  <img id="thisImage" src="../../images/accelerometer.png" alt="Picture of micro:bit as accelerometer, and picture of data from accelerometer"> 
+	  	</div>
+	
+	<div id="bottomContainer">
+		<div id="contents" class="text">
+			<ul>
+				<li id = "stepOneContents" class="plainText"><a href = "#stepOne" onclick = "stepOne()">How it works</a></li>
+				<li id = "stepTwoContents" class="plainText"><a href = "#stepTwo" onclick = "stepTwo()">Code it</a></li>
+				<li id = "stepThreeContents" class="plainText"><a href = "#stepThree" onclick = "stepThree()">Improve it</a></li>
+			</ul>
+		</div>
+
+		<div id="instructions" class="text">
+			<h3 id="stepOne">How it works</h3>
+			<p class="plainText">Flash the transmitter program onto a micro:bit with battery pack and either attach it to something that moves (like the inside of a salad spinner) or get ready to play catch with it. The program takes constant <a target="_blank" href="https://microbit.org/get-started/user-guide/features-in-depth/#accelerometer">accelerometer</a> readings of the forces in 3 dimensions (x, y and z axes) and transmits them by <a target="_blank" href="https://microbit.org/get-started/user-guide/features-in-depth/#radio">radio</a>.</p>
+			<p class="plainText">Connect the receiver micro:bit to a computer by USB and flash the logger program on to it using the <a target="_blank" href="https://codewith.mu/">Mu Python editor app</a>.</p>
+			<p class="plainText">This micro:bit receives the accelerometer data and send as serial data to your computer. Click on the ‘Plotter’ button in Mu and you should see graphs of the live data readings appear on the screen.</p>
+			<p class="plainText">Place the sensor micro:bit on each side and see how the readings in each axis change. Throw it in the air, spin it in a salad spinner: what do you see?</p>
+			<p class="plainText">Mu saves the numerical data as a CSV (comma separated values) file in your computer's home folder. Look in 'mu_code' and then the 'data_capture' folder.</p>
+			<p class="plainText">You can open the CSV file in a spreadsheet program to analyse. If you delete the second and third time columns, leaving only the first, you can plot the data on a scatter graph in your spreadsheet showing how the forces change over time.</p>
+
+			<img class="fullwidth" src="../../images/accelerometer_readings.PNG" alt="Logged accelerometer data" >
+			
+			<h3 id="stepTwo">Code it</h3>
+			<h4>Sensor / transmitter</h4>
+
+			<pre><code><span class="kn">from</span> microbit <span class="kn">import</span> *
+<span class="kn">import</span> radio
+radio.config(group=<span >99</span>)
+radio.on()</code></pre>
+			<h4>Receiver / logger</h4>
+			
+			<pre><code><span class="kn">from</span> microbit <span class="kn">import</span> *
+<span class="kn">import</span > <span class="nb">radio
+radio.config</span>(group=<span class="mi"
+>99</span>)
+<span class="nb">radio.on()</span>
+
+<span class="kn">while</span> <span>True</span>:
+    message = <span class="nb">radio.receive()</span>
+    sleep(<span class="mi">20</span>)
+    print(message)</code></pre>
+			
+			<h3 id="stepThree">Improve it</h3>
+			<p class="plainText">Record other micro:bit sensor readings remotely this way, such as temperature, light or magnetic compass readings. Conduct a physics experiment into the forces acting on a micro:bit as it spins in a salad spinner (centrifuge). Do you see what you expect? (Bear in mind that the accelerometer on the micro:bit can only read forces up to 2g, twice the force of the Earth’s gravity – if you spin it fast it may experience forces that are too large for it to register.)</p>
+		</div> <!--id="instruction"-->
+	</div> <!--id="bottomContainer"-->
+	
+	<footer>
+		<div><a href="../../index.html"><img src="../../images/logo.png" class="logo" alt="logo"></a></div>
+		<div id = "footer_links">
+			<a class="text" href="../about.html" >About</a>
+			<span>|</span>
+			<a class="text" href="../acknowledgments.html" >Acknowledgments</a>
+		</div>
+	</footer>
+	
+	<script>
+		/*Script that formates top section */
+		var topElem = document.getElementById('top'); //finds element of toptext
+		setHeight();
+
+		function whenLoaded(){ //when page is loaded
+			setHeight();
+		}
+
+		window.onresize = function(event) { //does function everytime window resizes
+			setHeight();
+		};
+	
+		function setHeight(){
+			var topHeight = window.getComputedStyle(topElem, null).getPropertyValue('height'); //finds height of toptext
+			document.getElementById('thisImage').style.height = topHeight; //sets the height of img to height of text
+		}	
+		
+		/*Sticky script*/
+		window.onscroll = function() {myFunction()};
+
+		var contents = document.getElementById("contents");
+		var sticky = contents.offsetTop;
+
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+			contents.classList.add("sticky")
+		  } else {
+			contents.classList.remove("sticky");
+		  }
+		}
+		
+		/*Script that colours bullet points */
+		function stepOne() {
+			document.getElementById("stepOneContents").style.color = "white";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+		
+		function stepTwo() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "white";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+
+		}
+		
+		function stepThree() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "white";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepFour() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "white";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepFive() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "white";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepSix() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "white";
+		}
+	</script>
+</body>
+</html>

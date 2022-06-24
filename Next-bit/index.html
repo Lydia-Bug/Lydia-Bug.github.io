@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="styleSheets/index.css"> 
+<link rel="stylesheet" type="text/css" href="styleSheets/main.css"> 
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Ubuntu&display=swap" rel="stylesheet"> <!-- Links to goolgle fonts, font -->
+<link rel="shortcut icon" href="images/logo.png" /> <!-- Puts logo on tab -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Next:bit</title>
+</head>
+
+<body onload="whenLoaded()">
+	<header>
+		<div><a href="#"><img src="images/logo.png" class="logo" alt="logo"></a></div>
+		<h1 id="title">Next:Bit</h1>
+		<div id = "navbar_links">
+			<a class="text" href="pages/projects.html" >Projects</a>
+			<span>|</span>
+			<a class="text" href="pages/learn.html" >Learn</a>
+		</div>
+	</header>
+	
+	<div id="top">
+		<div class="text" id="toptext">
+			<span>Learn and create complex projects with the </span>
+			<span id="emphasize">micro:bit</span>
+		</div>
+		<img src="images/microbit_on_table.jpg" alt="micro:bits on a table">
+	</div>
+	
+	<a href="pages/projects.html" >
+		<div id="projects" class="bottom">
+			<img src="images/microBitProject.PNG" alt="Micro:bit with rubber bands, and alligator clips attached"> 
+			<p class="text">Projects</p>
+		</div>
+	</a>
+	
+	<a href="pages/learn.html" >
+		<div id="learn" class="bottom">
+			<img src="images/microBitLearn.jpg" alt="Lines of code on computer screen">
+			<p class="text">Learn</p>
+		</div>
+	</a>
+	
+	<footer>
+		<div><a href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a></div>
+		<div id = "footer_links">
+			<a class="text" href="pages/about.html" >About</a>
+			<span>|</span>
+			<a class="text" href="pages/acknowledgments.html" >Acknowledgments</a>
+		</div>
+	</footer>
+	
+	<script> 
+	//This code will set the height of the top div, to the height of the text inside it. This is so the image is always the same size as the text, not larger
+	var topElem = document.getElementById('toptext'); //finds element of toptext
+	setHeight();
+
+	function whenLoaded(){ //when page is loaded
+		setHeight();
+	}
+		
+	window.onresize = function(event) { //does function everytime window resizes
+		setHeight();
+	};
+		
+	function setHeight(){
+		var topHeight = window.getComputedStyle(topElem, null).getPropertyValue('height'); //finds height of toptext
+		topHeight = topHeight.replace("px",""); //turns 100px into 100, an int which we can change
+		topHeight=+topHeight; 
+		var n = topHeight;
+		topHeight=n+20+'px'; //adds 20px to value "adds padding"
+		
+		document.getElementById('top').style.height = topHeight; //sets the height of the top div to the height of the text
+	}	
+	</script> 
+</body>
+</html>
+
+

@@ -1,0 +1,103 @@
+/* Main stylesheet applied to all files */
+
+*{
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+  color: black;
+}
+/* ============= Top ============= */
+#top{
+	background-image: linear-gradient(to right, #017abc , #5cd6ff);
+	/*margin: 10px;*/
+}
+
+#top h1{
+	padding: 10px;
+	font-size: 12vw;
+	overflow-wrap: break-word;
+}
+
+@media only screen and (min-width: 800px){ /* If in desktop mode */
+	#top h1{
+		font-size: 70px;
+	}
+}
+
+/* ============= Text ============= */
+.text{
+	font-family: 'Ubuntu', sans-serif;
+	color: black;
+}
+
+/* ============= Navbar and Footer ============= */
+header, footer{
+	background-color: #d5edf2;
+	padding: 10px;
+    overflow: hidden;
+}
+
+.logo{
+	float: left;
+	padding-top: 8px; /* Because the logo was sightly displaced */
+}
+/* ============= NavBar ============= */
+#title{
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 50px;
+	float: left;
+	padding-left: 15px;
+}
+	
+header img{
+	height: 50px;
+}
+
+#navbar_links{
+	font-size: 50px;
+	float: left;
+	margin-left: 0px;
+}
+
+/* This code is to move the links to the right when in desktop mode */
+@media only screen and (min-width: 680px){
+	#navbar_links{
+		float: right;
+	}
+}
+/*
+@media only screen and (min-width: 660px){
+	#navbar_links{
+		margin-left: 20px;
+	}
+}*/
+
+/* ============= Footer ============= */	
+footer{
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+footer img{
+	padding-right: 15px;
+	height: 35px;
+}
+
+#footer_links{
+	font-size: 30px;
+}
+
+@media only screen and (min-width: 556px){
+	#footer_links{
+		font-size: 40px;
+	}
+}

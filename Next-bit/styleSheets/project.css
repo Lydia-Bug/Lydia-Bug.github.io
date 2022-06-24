@@ -1,0 +1,187 @@
+
+
+/* ============= Top ============= */
+.box {
+	box-sizing: border-box;
+	border: 10px solid white;
+}
+
+.box img{ 
+	object-fit: cover;
+	width: 100%;
+}
+
+#bottomImg{
+	float: right;
+	position: relative;
+	width: 100%;
+
+}
+
+
+@media only screen and (min-width: 900px) { /* If website is on desktop */
+	.box{
+		width: 50%;
+	}
+	#bottomImg{
+		width: 50%;
+		bottom: 20px;
+	}
+	.box p{
+		font-size: 20px;
+	}
+}
+
+.box .text{
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+
+.box p{
+	padding: 10px;
+	font-size: 20px;
+}
+
+/* ============= Bottom ============= */
+
+/*
+#bottomContainer{
+	width: 90%;	
+	margin: auto;
+	overflow: auto;
+}
+*/
+
+.plainText{
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+
+
+
+/* ============= Contents ============= */
+
+
+#contents{
+	box-sizing: border-box;
+	border: 10px solid white;
+	width: 100%;
+	list-style-position: inside;
+	padding: 10px;
+	border-radius: 30px;
+	background-image: linear-gradient(to bottom right, #5cd6ff, #60f8d6);
+	overflow:hidden;
+}
+
+#contents li{
+	list-style-type: circle;
+	/*list-style-image: url('../images/bullet.png');*/
+	font-size: 20px;
+}
+
+/* ============= Instructions ============= */
+#instructions .small{
+	width: 20%;
+	min-width: 200px;
+}
+
+.medium{
+	width: 40%;
+	min-width: 350px;
+}
+
+#instructions a{
+	text-decoration-line: underline;
+	color: darkblue;
+}
+
+#instructions{
+	position: relative;
+	bottom: 23px;
+    border: 10px solid white;
+	padding: 40px;
+	box-sizing: border-box;
+	background-color: #d5edf2;
+	width: 100%;
+}
+
+#instructions h3{
+	padding-bottom: 30px;
+	font-size: 50px;
+}
+
+#instructions h4{
+	padding-bottom: 10px;
+	font-size: 30px;
+}
+
+pre{
+	margin-bottom: 10px;
+}
+/*
+@media only screen and (min-width: 1000px){
+	#instructions h3{
+		font-size: 4vw;
+	}
+
+	#instructions h4{
+		font-size: 3vw;
+	}
+}*/
+
+@media only screen and (min-width: 900px) { /* If website is on desktop */
+	#contents{
+		width: 20%;
+		float: left;
+	}
+	#instructions{
+		float: right;
+		width: 80%;
+	}
+	.sticky { /*This is applided to the contents when it reaches the top of the page*/
+	  position: fixed;
+	  top: 0;
+	  width: 100%;
+	}
+}
+
+.error{
+	height: 70px;
+}
+
+#video{
+	position:relative;
+	padding-top:56.25%;
+	margin-bottom: 10px;
+}
+
+iframe{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.scrollbar{
+	width: 100%;
+	
+	overflow-x: scroll; 
+	white-space: nowrap;
+}
+
+.fullwidthscrollsmall{
+	width: 100%;
+	max-width: 500px;   
+}
+
+.fullwidthscroll{
+	width: 100%;
+	min-width: 800px;   
+}
+
+.fullwidth{
+	width: 100%;
+}
