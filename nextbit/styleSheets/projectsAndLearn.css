@@ -1,0 +1,100 @@
+/* ============= Top ============= */
+#top{
+	margin: 10px;
+}
+/* ============= Bottom ============= */
+#twoInRow{
+	display: inline;
+}
+#threeInRow{
+ 	display: none;
+ }
+#fourInRow{
+	display: none;
+}
+
+.bottom {
+	box-sizing: border-box;
+	border: 10px solid white;
+	background-color: lightblue;
+}
+
+.bottom img{ 
+	height: 200px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.bottom .text{
+	text-align: center;
+	padding: 25px;
+}
+
+.bottom h1{
+	font-size: 7vw;
+	padding-bottom: 10px;
+}
+
+.bottom p{
+	font-size: 4vw;
+}
+
+
+@media only screen and (min-width: 600px) { /* If website is on desktop */
+	.bottom-container {
+    	display: table;
+    	width: 100%;
+	}
+
+	#twoInRow{
+		display: inline;
+	}
+
+	.bottom{
+		display: table-cell;
+		width: 50%;
+	}
+	
+	.bottom img{
+		height: 300px;
+	}
+	
+	.bottom h1{
+		font-size: 40px;
+	}
+
+	.bottom p{
+		font-size: 25px;
+	}
+}
+
+@media only screen and (min-width: 1000px) { /* If website is on desktop */
+
+	#twoInRow{
+		display: none;
+	}
+
+	#threeInRow{
+		display: inline;
+	}
+
+	.bottom{
+		width: 33.33%;
+	}
+}
+
+
+@media only screen and (min-width: 1500px) { /* If website is on desktop */
+	#threeInRow{
+		display: none;
+	}
+
+	#fourInRow{
+		display: inline;
+	}
+
+	.bottom{
+		width: 25%;
+
+	}
+}

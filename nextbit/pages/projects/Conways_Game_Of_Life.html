@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../../styleSheets/main.css"> 
+<link rel="stylesheet" type="text/css" href="../../styleSheets/project.css"> 
+<link rel="stylesheet" type="text/css" href="../../styleSheets/code.css"> 	
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Ubuntu&display=swap" rel="stylesheet"> <!-- Links to goolgle fonts, font -->
+<link rel="shortcut icon" href="../../images/logo.png" /> <!-- Puts logo on tab -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+
+<title>Next:bit | Conways Game of Life</title>
+</head>
+
+<body onload="whenLoaded()">
+	<header>
+		<div><a href="../../nextbit.html"><img src="../../images/logo.png" class="logo" alt="logo"></a></div>
+		<h1 id="title">Next:Bit</h1>
+		<div id = "navbar_links">
+			<a class="text" href="../projects.html" >Projects</a>
+			<span>|</span>
+			<a class="text" href="../learn.html" >Learn</a>
+		</div>
+	</header>
+	
+	    <div class="box">
+			<div id="top" class="text">
+				<h1>Conway's Game of Life</h1>
+				<p>Do you know your micro:bit can grow life? Look at a small universe that evolves.</p>
+			</div>
+	    </div>
+		
+		<div class="box" id="bottomImg">
+		  <img id="thisImage" src="../../images/game_of_life.png" alt="Picture of code and finished product"> 
+	  	</div>
+	
+	<div id="bottomContainer">
+		<div id="contents" class="text">
+			<ul>
+				<li id = "stepOneContents" class="plainText"><a href = "#stepOne" onclick = "stepOne()">Story</a></li>
+				<li id = "stepTwoContents" class="plainText"><a href = "#stepTwo" onclick = "stepTwo()">Quick start</a></li>
+				<li id = "stepThreeContents" class="plainText"><a href = "#stepThree" onclick = "stepThree()">Usage</a></li>
+				<li id = "stepFourContents" class="plainText"><a href = "#stepFour" onclick = "stepFour()">Some patterns to try</a></li>
+				<li id = "stepFiveContents" class="plainText"><a href = "#stepFive" onclick = "stepFive()">The code explained</a></li>
+				<li id = "stepSixContents" class="plainText"><a href = "#stepSix" onclick = "stepSix()">Code</a></li>
+			</ul>
+		</div>
+
+		<div id="instructions" class="text">
+			<h3 id="stepOne">Story</h3>
+			<p class="plainText">At each step, the universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells. Each of which is in one of two possible states, alive or dead, or "populated" or "unpopulated". Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</p>
+			<p class="plainText">Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.</p>
+			<p class="plainText">Any live cell with two or three live neighbours lives on to the next generation.</p>
+			<p class="plainText">Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
+			<p class="plainText">Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
+			<p class="plainText">The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed—births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick (in other words, each generation is a pure function of the preceding one). The rules continue to be applied repeatedly to create further generations.</p>
+			<p class="plainText">Extracted from the <a target="_blank" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Wikipedia page about Conway's Game of Life.</a></p> <!-- traget blank means link will open in another tag -->
+			<p class="plainText">In this implementation the universe is a toroidal 5x5 grid, this means the top 5 cells are adjacent with the bottom 5 cells, the same for the left and right cells. With a so small space available some patterns act in a strange way, we start exploring it.</p>
+			
+			
+			<h3 id="stepTwo">Quick start</h3>
+			<p class="plainText">Go to this <a target="_blank" href="https://microbit.org/" target="_blank">BBC micro:bit</a> page, press "Create Code" and choose "MicroPython", now you are in the Python Editor. Remove the existing code and copy / paste the code below. Name your project (top right).n Follow the "Instructions" on the right to compile and upload the script to your micro:bit.</p>
+				
+			<h3 id="stepThree">Usage</h3>
+			<p class="plainText">The script has 2 modes: "CONFIG" and "RUN".</p>
+			<p class="plainText">In the CONFIG mode you can set up the start configuration, using the B button you can RUN it and watch the universe evolve, at any time you can modify the universe and watch what's happen.</p>
+			<p class="plainText">CONFIG mode</p>
+			<ul class="plainText">
+				<li>Tilt: move the cursor.</li>
+				<li>Button A: enable or disable the cell under the cursor.</li>
+				<li>Button B: switch to RUN mode.</li>
+			</ul>
+			<p class="plainText">RUN mode</p>
+			<ul class="plainText">
+				<li>Button B: switch to CONFIG mode.</li>
+			</ul>
+			
+			<h3 id="stepFour">Some patterns to try</h3>
+			<img class="small" src="../../images/GOL_blinker.png" alt="three pixels in a vertical line">
+			<p class="plainText">Blinker: an oscillator with period 2.</p>
+			<img class="small" src="../../images/GOL_toad.png" alt="two horizontal lines of three pixels on top of each other, offset by one pixel">
+			<p class="plainText">Toad: another oscillator with period 2</p>
+			<img class="small" src="../../images/GOL_glider.png" alt="line of three horizontal pixels, one pixel on top to the right, and one in the middle two pixcels up">
+			<p class="plainText">Glider: a spaceship.</p>
+			<img class="small" src="../../images/GOL_lineanddot.png" alt="five horizontal pixels and one pixels in the middle two pixcels up">
+			<p class="plainText">Line and dot: an oscillator with period 4.</p>
+		
+			<h3 id="stepFive">The code explained</h3>
+			<p class="plainText">At rows 3 and 5 there are the 2 "draw" functions: draw_universe and draw_cursor. These functions sets the led luminosity at various levels, 0 for an empty cell, 9 for a populated cell, 4 for and empty cell with the cursor on it and 6 for a populated cell with a cursor on it.</p>
+			<p class="plainText">The core is the function evolve (row 15), in this function there are all the rules defined on top of this page.</p>
+			<p class="plainText">At rows 33 and 39 there are 2 support function for evolve: cell_state and count_neighbours. In count_neighbours at row 43 there's the trick for the toroidal universe: the module operator (%). The same trick is in the row 73 and following.</p>
+			<p class="plainText">At row 59 there's the main loop, it is basically divided in 2 parts: the RUN mode and the CONFIG mode.</p>
+			<p class="plainText">The interesting thing here is the accelerometer managing at row 71. The accelerometer values (x, y, z) goes from -1024 to +1024, when it is flat the x and the y values are both (more or less) 0. In this case a grace zone of 200 is used to avoid unwanted cursor movements.</p>
+			
+			<h3 id="stepSix">Code</h3>
+			
+			<pre><code><span id="line-1"><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="k">def</span> <span class="nf">draw_cursor</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span id="line-4">    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"CONFIG"</span><span class="p">:</span>
+</span><span id="line-5">        <span class="k">if</span> <span class="n">cell_state</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="line-6">            <span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</span><span id="line-7">        <span class="k">else</span><span class="p">:</span>
+</span><span id="line-8">            <span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</span><span id="line-9">        
+</span><span id="line-10"><span class="k">def</span> <span class="nf">draw_universe</span><span class="p">(</span> <span class="n">universe</span> <span class="p">):</span>
+</span><span id="line-11">    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span><span id="line-12">        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span><span id="line-13">            <span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">universe</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">5</span><span class="p">])</span>
+</span><span id="line-14">            
+</span><span id="line-15"><span class="k">def</span> <span class="nf">evolve</span><span class="p">(</span> <span class="n">universe</span> <span class="p">):</span>
+</span><span id="line-16">    <span class="n">next_universe</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-17">    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span><span id="line-18">        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span><span id="line-19">            <span class="n">cell_neighbours</span> <span class="o">=</span> <span class="n">count_neighbours</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span id="line-20">            <span class="n">cell_is_alive</span> <span class="o">=</span> <span class="n">cell_state</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span id="line-21">            <span class="k">if</span> <span class="n">cell_is_alive</span> <span class="ow">and</span> <span class="n">cell_neighbours</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+</span><span id="line-22">                <span class="n">next_universe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="line-23">            <span class="k">elif</span> <span class="n">cell_is_alive</span> <span class="ow">and</span> <span class="p">(</span><span class="n">cell_neighbours</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">cell_neighbours</span> <span class="o">==</span> <span class="mi">3</span><span class="p">):</span>
+</span><span id="line-24">                <span class="n">next_universe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</span><span id="line-25">            <span class="k">elif</span> <span class="n">cell_is_alive</span> <span class="ow">and</span> <span class="n">cell_neighbours</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="line-26">                <span class="n">next_universe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="line-27">            <span class="k">elif</span> <span class="ow">not</span> <span class="n">cell_is_alive</span> <span class="ow">and</span> <span class="n">cell_neighbours</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="line-28">                <span class="n">next_universe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</span><span id="line-29">            <span class="k">else</span><span class="p">:</span>
+</span><span id="line-30">                <span class="n">next_universe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="line-31">    <span class="k">return</span> <span class="n">next_universe</span>
+</span><span id="line-32">    
+</span><span id="line-33"><span class="k">def</span> <span class="nf">cell_state</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span id="line-34">    <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="line-35">    <span class="k">if</span> <span class="n">universe</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">y</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="line-36">        <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="line-37">    <span class="k">return</span> <span class="n">state</span>
+</span><span id="line-38">    
+</span><span id="line-39"><span class="k">def</span> <span class="nf">count_neighbours</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span id="line-40">    <span class="n">neighbours</span> <span class="o">=</span> <span class="o">-</span><span class="n">cell_state</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span id="line-41">    <span class="k">for</span> <span class="n">dy</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+</span><span id="line-42">        <span class="k">for</span> <span class="n">dx</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+</span><span id="line-43">            <span class="n">neighbours</span> <span class="o">+=</span> <span class="n">cell_state</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span>
+</span><span id="line-44">    <span class="k">return</span> <span class="n">neighbours</span>
+</span><span id="line-45">
+</span><span id="line-46">
+</span><span id="line-47"><span class="n">current_universe</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">0</span> <span class="p">,</span><span class="mi">0</span> <span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+</span><span id="line-48">                     <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> 
+</span><span id="line-49">                     <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="line-50">                     <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="line-51">                     <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,]</span>
+</span><span id="line-52">
+</span><span id="line-53"><span class="n">cursor_x</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="line-54"><span class="n">cursor_y</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="line-55">              
+</span><span id="line-56"><span class="n">mode</span> <span class="o">=</span> <span class="s2">"CONFIG"</span>
+</span><span id="line-57"><span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+</span><span id="line-58">
+</span><span id="line-59"><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+</span><span id="line-60">    
+</span><span id="line-61">    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"RUN"</span><span class="p">:</span>
+</span><span id="line-62">        <span class="n">current_universe</span> <span class="o">=</span> <span class="n">evolve</span><span class="p">(</span> <span class="n">current_universe</span> <span class="p">)</span>
+</span><span id="line-63">
+</span><span id="line-64">        <span class="k">if</span> <span class="n">button_b</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span><span id="line-65">            <span class="n">mode</span> <span class="o">=</span> <span class="s2">"CONFIG"</span>
+</span><span id="line-66">            <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+</span><span id="line-67">            
+</span><span id="line-68">            
+</span><span id="line-69">    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"CONFIG"</span><span class="p">:</span>
+</span><span id="line-70">        
+</span><span id="line-71">        <span class="n">accelerometer_xyz</span> <span class="o">=</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+</span><span id="line-72">        <span class="k">if</span> <span class="n">accelerometer_xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">200</span><span class="p">:</span>
+</span><span id="line-73">            <span class="n">cursor_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">cursor_x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span>
+</span><span id="line-74">        <span class="k">if</span> <span class="n">accelerometer_xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">:</span>
+</span><span id="line-75">            <span class="n">cursor_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">cursor_x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span>
+</span><span id="line-76">        <span class="k">if</span> <span class="n">accelerometer_xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">200</span><span class="p">:</span>
+</span><span id="line-77">            <span class="n">cursor_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">cursor_y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span>
+</span><span id="line-78">        <span class="k">if</span> <span class="n">accelerometer_xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">:</span>
+</span><span id="line-79">            <span class="n">cursor_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">cursor_y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span>
+</span><span id="line-80">        
+</span><span id="line-81">        <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span><span id="line-82">            <span class="k">if</span> <span class="n">cell_state</span><span class="p">(</span><span class="n">current_universe</span><span class="p">,</span> <span class="n">cursor_x</span><span class="p">,</span> <span class="n">cursor_y</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="line-83">                <span class="n">current_universe</span><span class="p">[</span><span class="n">cursor_x</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">cursor_y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+</span><span id="line-84">            <span class="k">else</span><span class="p">:</span>  
+</span><span id="line-85">                <span class="n">current_universe</span><span class="p">[</span><span class="n">cursor_x</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">cursor_y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="line-86">                
+</span><span id="line-87">        <span class="k">if</span> <span class="n">button_b</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span><span id="line-88">            <span class="n">mode</span> <span class="o">=</span> <span class="s2">"RUN"</span>
+</span><span id="line-89">            <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+</span><span id="line-90">           
+</span><span id="line-91">           
+</span><span id="line-92">    <span class="n">draw_universe</span><span class="p">(</span> <span class="n">current_universe</span> <span class="p">)</span>
+</span><span id="line-93">    <span class="n">draw_cursor</span><span class="p">(</span><span class="n">current_universe</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">cursor_x</span><span class="p">,</span> <span class="n">cursor_y</span><span class="p">)</span> 
+</span><span id="line-94">    <span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</span></code></pre>
+			
+			
+		</div> <!--id="instruction"-->
+	</div> <!--id="bottomContainer"-->
+	
+	<footer>
+		<div><a href="../../nextbit.html"><img src="../../images/logo.png" class="logo" alt="logo"></a></div>
+		<div id = "footer_links">
+			<a class="text" href="../about.html" >About</a>
+			<span>|</span>
+			<a class="text" href="../acknowledgments.html" >Acknowledgments</a>
+		</div>
+	</footer>
+	
+	<script>
+		/*Script that formates top section */
+		var topElem = document.getElementById('top'); //finds element of toptext
+		setHeight();
+
+		function whenLoaded(){ //when page is loaded
+			setHeight();
+		}
+
+		window.onresize = function(event) { //does function everytime window resizes
+			setHeight();
+		};
+	
+		function setHeight(){
+			var topHeight = window.getComputedStyle(topElem, null).getPropertyValue('height'); //finds height of toptext
+			document.getElementById('thisImage').style.height = topHeight; //sets the height of img to height of text
+		}	
+		
+		/*Sticky script*/
+		window.onscroll = function() {myFunction()};
+
+		var contents = document.getElementById("contents");
+		var sticky = contents.offsetTop;
+
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+			contents.classList.add("sticky")
+		  } else {
+			contents.classList.remove("sticky");
+		  }
+		}
+		
+		/*Script that colours bullet points */
+		function stepOne() {
+			document.getElementById("stepOneContents").style.color = "white";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+		
+		function stepTwo() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "white";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+
+		}
+		
+		function stepThree() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "white";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepFour() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "white";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepFive() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "white";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepSix() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "white";
+		}
+	</script>
+</body>
+</html>

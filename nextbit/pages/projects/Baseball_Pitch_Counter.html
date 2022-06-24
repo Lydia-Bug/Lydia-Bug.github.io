@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../../styleSheets/main.css"> 
+<link rel="stylesheet" type="text/css" href="../../styleSheets/project.css"> 
+<link rel="stylesheet" type="text/css" href="../../styleSheets/code.css"> 	
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Ubuntu&display=swap" rel="stylesheet"> <!-- Links to goolgle fonts, font -->
+<link rel="shortcut icon" href="../../images/logo.png" /> <!-- Puts logo on tab -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+
+<title>Next:bit | Baseball Pitch Counter</title>
+</head>
+
+<body onload="whenLoaded()">
+	<header>
+		<div><a href="../../nextbit.html"><img src="../../images/logo.png" class="logo" alt="logo"></a></div>
+		<h1 id="title">Next:Bit</h1>
+		<div id = "navbar_links">
+			<a class="text" href="../projects.html" >Projects</a>
+			<span>|</span>
+			<a class="text" href="../learn.html" >Learn</a>
+		</div>
+	</header>
+	
+	    <div class="box">
+			<div id="top" class="text">
+				<h1>Baseball Pitch Counter</h1>
+				<p>An automated baseball pitch counter with the help of a micro:bit.</p>
+			</div>
+	    </div>
+		
+		<div class="box" id="bottomImg">
+		  <img id="thisImage" src="../../images/counter.jpg" alt="Micro:bit with number 5 displayed"> 
+	  	</div>
+	
+	<div id="bottomContainer">
+		<div id="contents" class="text">
+			<ul>
+				<li id = "stepOneContents" class="plainText" ><a href = "#stepOne" onclick = "stepOne()">Ideation</a></li>
+				<li id = "stepTwoContents" class="plainText"><a href = "#stepTwo" onclick = "stepTwo()">The Process</a></li>
+				<li id = "stepThreeContents" class="plainText"><a href = "#stepThree" onclick = "stepThree()">Code</a></li>
+			</ul>
+		</div>
+
+		<div id="instructions" class="text">
+			<h3 id="stepOne">Ideation</h3>
+			<p class="plainText">As a baseball player you know that keeping a pitch count is vital to limiting a pitcher's pitches and keeping their arm healthy. The duty is often relegated to one of the players or coaches on the bench. However, as humans, we all make mistakes and they often forget to count a pitch and therefore making the pitch count inaccurate. That's why I decided to create an automatic pitch counter with my micro:bit. It uses an accelerometer to measure if a pitch is thrown and adds one to the amount of pitches thrown.</p>
+			
+			<h3 id="stepTwo">The Process</h3>
+			<p class="plainText">To start my project, I used the "on shake" block while coding my micro:bit, but I found that it was a little too sensitive and often counted slight arm movements as pitches.</p>
+			<p class="plainText">After deciding that using the accelerometer would be the best way to measure if a pitch was being thrown, I had to find out the amount of force that is being exerted when throwing a pitch. After several test, I concluded that 3000mg would be a good baseline measurement to count any amount of force above it as a pitch. Common arm movements and shaking does not count as pitches because of the high baseline while even slower pitchers throw hard enough to count as a pitch.</p>
+			<p class="plainText">Another thing that I had to think about while creating my program was how I would be able to send a signal that included the number of pitches thrown from the micro:bit that measures force and amount of pitches to the coach's micro:bit so that he can see how many pitches thrown. A simple solution to that problem was to set them on the same radio group, max out the transmit power on the pitcher's micro:bit, and set the coach's micro:bit to receive the information. This way, the amount of pitches shown on the pitcher's micro:bit can also be seen on the coach's micro:bit for easy reference by the coach.</p>
+			<p class="plainText">Lastly, I wanted to create a little fun game for the pitch counter to use in addition to just counting the number of pitches thrown. The program also includes a game (with a strength meter) that measures the amount of force in gravitational metric units of force. This feature allows you to see how much quickly your arm is accelerating and it could be a fun way to challenge yourself to throw even harder.</p>
+			
+			<h3 id="stepThree">Code</h3>
+			<div class="scrollbar">
+				<img class="fullwidthscroll" src="../../images/pitch_counter_code.png" alt="Picture of code for pitchers micro:bit" >
+			</div>
+			<p class="plainText">Pitch counter (pitchers micro:bit)</p>
+			<div class="scrollbar">
+				<img class="fullwidthscroll" src="../../images/pitch_counter_code_coach.png" alt="Picture of code for coaches micro:bit" >
+			</div>
+			<p class="plainText">Pitch counter receiver (coaches micro:bit)</p>
+			
+		</div> <!--id="instruction"-->
+	</div> <!--id="bottomContainer"-->
+	
+	<footer>
+		<div><a href="../../nextbit.html"><img src="../../images/logo.png" class="logo" alt="logo"></a></div>
+		<div id = "footer_links">
+			<a class="text" href="../about.html" >About</a>
+			<span>|</span>
+			<a class="text" href="../acknowledgments.html" >Acknowledgments</a>
+		</div>
+	</footer>
+	
+	<script>
+		/*Script that formates top section */
+		var topElem = document.getElementById('top'); //finds element of toptext
+		setHeight();
+
+		function whenLoaded(){ //when page is loaded
+			setHeight();
+		}
+
+		window.onresize = function(event) { //does function everytime window resizes
+			setHeight();
+		};
+	
+		function setHeight(){
+			var topHeight = window.getComputedStyle(topElem, null).getPropertyValue('height'); //finds height of toptext
+			document.getElementById('thisImage').style.height = topHeight; //sets the height of img to height of text
+		}	
+		
+		/*Sticky script*/
+		window.onscroll = function() {myFunction()};
+
+		var contents = document.getElementById("contents");
+		var sticky = contents.offsetTop;
+
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+			contents.classList.add("sticky")
+		  } else {
+			contents.classList.remove("sticky");
+		  }
+		}
+		
+		/*Script that colours bullet points */
+		function stepOne() {
+			document.getElementById("stepOneContents").style.color = "white";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+		
+		function stepTwo() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "white";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+
+		}
+		
+		function stepThree() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "white";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepFour() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "white";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepFive() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "white";
+			document.getElementById("stepSixContents").style.color = "black";
+		}
+
+		function stepSix() {
+			document.getElementById("stepOneContents").style.color = "black";
+			document.getElementById("stepTwoContents").style.color = "black";
+			document.getElementById("stepThreeContents").style.color = "black";
+			document.getElementById("stepFourContents").style.color = "black";
+			document.getElementById("stepFiveContents").style.color = "black";
+			document.getElementById("stepSixContents").style.color = "white";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+/* ============= Top ============= */
+#top{
+	margin: 10px;
+}
+
+#top img{ 
+	display: none; /* Won't display image if in mobile */
+}
+
+#toptext{
+	text-align: center;
+	padding: 10px;
+	display: inline-block;
+	font-size: 10vw;
+}
+
+#emphasize{
+	color: white;
+}
+
+@media only screen and (min-width: 800px){ /* If in desktop mode */
+	#toptext{
+	 	width: 40%;
+	}
+	
+	#top img{
+	display: inline-block;
+	float: right;
+	width: 55%;
+	height: 100%;
+	object-fit: cover;
+	background-image: url(../images/microbit_on_table.jpg);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+	}
+	
+	#toptext{
+		text-align: left;
+		font-size: 90px;
+	}
+}
+/* ============= Bottom ============= */
+.bottom{
+	height: 300px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.bottom img{ /* Makes image cover whole of container */
+	object-fit: cover;
+	width: 100%;
+    height: 100%;
+}
+
+.bottom p{
+	position: relative;
+	top: -205px; /* Moves band of text to centre of box */
+	text-align: center;
+	font-size: 14vw;
+	padding: 10px;
+}
+
+#projects p{
+	background-image: linear-gradient(to right, #5cd6ff , #5ee7eb);
+}
+
+#learn p{
+	background-image: linear-gradient(to right, #5ee7eb , #60f8d6);
+}
+
+@media only screen and (min-width: 800px) { /* If website is on desktop */
+	.bottom{
+		width: 50%;
+		float: left;
+		height: 400px;
+	}
+	.bottom p{
+		top: -255px;
+		font-size: 100px;
+	}
+}
