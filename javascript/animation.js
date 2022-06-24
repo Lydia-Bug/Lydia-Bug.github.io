@@ -1,118 +1,94 @@
 window.onload = function() {
     
     ctx = canvas.getContext("2d"),
-     mX = 0,
-     mY = 0,
-     started = true,
- 
-     canvas.width = window.innerWidth;
-     canvas.height = window.innerHeight;
- 
- canvas.addEventListener("mousemove", function (e) {
-     mX = e.pageX;
-     mY = e.pageY;
- });
-
- function resize(){
+    mX = 0,
+    mY = 0,
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
  
+ canvas.addEventListener("mousemove", function (e) {
+    mX = e.pageX;
+    mY = e.pageY;
+ });
+
+ var Ball = function (radius, followingSpeed, angularSpeed, displacement, n) {
+    this.centerX = canvas.width/2;
+    this.centerY = canvas.height/2;
+
+    this.radius = radius || 10;
+    this.followingSpeed = followingSpeed || 5;
+    this.angularSpeed = angularSpeed;
+    this.displacement= displacement * n;
+    this.n = n;
+
+    this.angle = 1.16;
+
+    this.displacementX;
+    this.displacementY;
+
+    var opacity = 1-0.005*n;
+    this.color = "rgba(255,255,255,+"+opacity+")";
  }
-
- var Ball = function (radius, speed, distance, n) {
-     this.centerX = 400;
-     this.centerY = 400;
-     this.radius = radius || 10;
-     this.speed = speed || 5;
-     this.n = n;
-     this.distance = distance * n;
-     this.angle = 1.16;
-
-     this.distanceX = this.distance;
-     this.distanceY = 0;
  
-     // makes our x and y the center of the circle.
-     this.centerX = (this.centerX-this.radius/2);
-     this.centerY = (this.centerY-this.radius/2);
+ Ball.prototype.update = function (mX, mY) {
 
-     var opacity = 1-0.01*n;
-     this.color = "rgba(255,255,255,+"+opacity+")";
- }
- 
- Ball.prototype.update = function (x, y) {
-      // get the target x and y
-      this.targetX = x;
-      this.targetY = y;
+    //find where center of pattern needs to go
+    var hypotenuse = Math.sqrt(Math.pow(mX-this.centerX,2)+Math.pow(mY-this.centerY,2));
+    var divideBy = hypotenuse/this.followingSpeed;
+    this.speedX = (mX-this.centerX)/divideBy;
+    this.speedY = (mY-this.centerY)/divideBy;
+    //if pattern is already at mouse, it won't move (without this it kinda glitches)
+    if(hypotenuse > this.followingSpeed/2){
+        this.centerX += this.speedX;
+        this.centerY += this.speedY;
+    }
 
-      //
-      var hypotenuse = Math.sqrt(Math.pow(this.targetX-this.centerX,2)+Math.pow(this.targetY-this.centerY,2));
-      var divideBy = hypotenuse/this.speed;
-      this.speedX = (this.targetX-this.centerX)/divideBy;
-      this.speedY = (this.targetY-this.centerY)/divideBy;
+    //updates angle
+    this.angle += this.angularSpeed;
+    var angleDisplacement = this.angle * this.n;
 
-
-      if(hypotenuse > this.speed/2){
-     this.centerX += this.speedX;
-     this.centerY += this.speedY;
-      }
-
-      this.angle += 0.0001;
-      var anglee = this.angle * this.n;
-
-      if(anglee > 2*Math.PI){
-        anglee -= 2*Math.PI;
-      }
-      if(this.angle > 2*Math.PI){
-        this.angle -= 2*Math.PI;
-      }
+    if(angleDisplacement > 2*Math.PI){
+        angleDisplacement -= 2*Math.PI;
+    }
       
-        this.distanceX = this.distance*Math.cos(anglee);
-        this.distanceY = -this.distance*Math.sin(anglee);
-      
+    this.displacementX = this.displacement*Math.cos(angleDisplacement);
+    this.displacementY = -this.displacement*Math.sin(angleDisplacement);
 
+};
+ 
+Ball.prototype.render = function () { 
+    ctx.fillStyle = this.color;
 
+    ctx.beginPath();
+    ctx.arc(this.centerX+this.displacementX, this.centerY+this.displacementY, this.radius, 0, Math.PI * 2,false);
+    ctx.fill();
+};
+ 
+function render() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 
+    ctx.save();
+    ctx.restore();
+    ctx.fill();
+ 
+    //so everything still in proportion when window resizes
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
- };
- 
- Ball.prototype.render = function () {
- 
- 
-     ctx.fillStyle = this.color;
-
-     ctx.font = "30px Arial";
-     ctx.fillText(this.angle + ", " + this.speedY, 10, 50); 
-
-     ctx.beginPath();
-     ctx.arc(this.centerX+this.distanceX, this.centerY+this.distanceY, this.radius, 0, Math.PI * 2,false);
-     ctx.fill();
- };
- 
- function render() {
-     ctx.clearRect(0, 0, canvas.width, canvas.height);
- 
-      ctx.save();
- 
- 
-      ctx.restore();
-      ctx.fill();
- 
-    resize();
-
-     for(let i = 0; i < balls.length; i++){
+    for(let i = 0; i < balls.length; i++){
         balls[i].update(mX, mY);
         balls[i].render();
-     }
+    }
  
-     if(started){
-         requestAnimationFrame(render);
-     }
- }
+    requestAnimationFrame(render);
+     
+}
  
- let balls = [];
- for(let i = 1; i < 100; i++){
-    balls.push(new Ball(10, 1, 4, i));
- }
+var balls = [];
+for(let i = 1; i < 500; i++){
+    balls.push(new Ball(10, 1, 0.0001, 3, i));
+}
  
- render();
+render();
  
- }
+}
