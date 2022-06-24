@@ -1,10 +1,10 @@
 window.onload = function() {
     
     ctx = canvas.getContext("2d"),
-    mX = 0,
-    mY = 0,
+    mX = canvas.width/2,
+    mY = canvas.height/2,
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight*0.7;
  
  canvas.addEventListener("mousemove", function (e) {
     mX = e.pageX;
@@ -84,7 +84,7 @@ function render() {
  
     //so everything still in proportion when window resizes
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight*0.7;
 
     for(let i = 0; i < balls.length; i++){
         balls[i].update(mX, mY);
