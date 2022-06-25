@@ -1,0 +1,129 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f2;
+  margin: 0px;
+}
+/*-----------------------------------------------------*/
+#BigHeading{
+  font-weight: 200;
+}
+
+.header {
+  margin: auto;
+  width: 70%;
+  background-image: url("images/header.jpg");
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-bottom: 1px;
+  font-family: 'Poiret One', cursive;
+  font-size: 30px;
+}
+
+#navbar {
+  z-index: 100;
+  font-size: 30px;
+  width: 70%;
+  margin: auto;
+  font-family: 'Poiret One', cursive;
+  overflow: hidden;
+  background-image: url("images/navbar.jpg");
+}
+
+.sticky {
+  left: 15%;
+  position: fixed;
+  top: 0;
+}
+
+#navbar a {
+  margin-left: 25px;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#navbar a.active {
+  background-color: #f1f1f2;
+  color: black;
+}
+/*---------------------------------------------------*/
+.box{
+  font-family: 'Economica', sans-serif;
+  font-weight: 200;
+  text-align: center;
+}
+/*---------------------------------------------------*/
+#toprow{
+  height: 19vw;
+  overflow: hidden;
+  
+}
+
+#box1{
+  margin-top: 2%; 
+  margin-left: 15%;
+  width: 34%;
+}
+
+#box2{
+  background: #1995ad;
+  font-size: 2vw;
+  padding: 4.5vw;
+  width: 34%;
+  float: right;
+  margin-right: 15%;
+}
+/*----------------------------------------------------------*/
+p.box{
+  display: inline-block;
+  font-size: 6vw;
+  padding: 5vw;
+  width: 21.9vw;
+  margin-right: 2%;
+  margin-top: 2%;
+  color: black;
+}
+
+#equipment{
+  margin-left: 15%; 
+}
+
+#mask{
+  background-image: url("images/mask.jpg");
+  margin-bottom: -0.1vw;
+}
+
+#snorkel{
+  background-image: url("images/snorkel.jpg");
+  margin-bottom: -0.1vw;
+}
+
+#flippers{
+  background-image: url("images/flippers.jpg");
+  margin-bottom: -0.1vw;
+}
+
+#stick{
+  background-image: url("images/sticks.jpg");
+  position: relative;
+  margin-bottom: 2vw;
+}
+
+#cap{
+  background-image: url("images/cap.jpg");
+  position: relative;
+  margin-bottom: 2vw;
+}
+
+#glove{
+  background-image: url("images/glove.jpg");
+  position: relative;
+  margin-bottom: 2vw;
+}

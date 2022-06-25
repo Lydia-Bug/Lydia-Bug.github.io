@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DifferentReferees</title>
+		<link rel="stylesheet" type="text/css" href="differentrefs.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../../underWaterHockey.html>Home</a>
+  			<a href=../../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../../rules/rules.html>Rules</a>
+  			<a href=../../refereeing/refereeing.html>Refereeing</a>
+  			<a href=../../equipment/equipment.html>Equipment</a>
+		</div>
+
+		<div class='box' id='threetypes'>
+			<h3>Three Different types of Referees:</h3>
+			<ul>
+				<li>Chief Referee</li>
+				<li>Water Referee</li>
+				<li>Timer-keeper/Scorer</li>
+			</ul>
+		</div>
+		<div class='box' id='waterref'>
+			<h3>Water Referee</h3>
+			<ul>
+				<li>There are two are three water referees</li>
+				<li>Water referees are on right and left side of play, with one tailing play if there are three referees</li>
+				<li>Use signals to signal goals, infrigemtns, penaltys, ect...</li>
+			</ul>
+		</div>
+		<div class='box' id='chiefref'>
+			<h3>Chief Referee</h3>
+			<ul>
+				<li>There is one chief referee, that stands on side of pool</li>
+				<li>Watch teams at restarts</li>
+				<li>Watches substitutions</li>
+				<li>Watches for all surface infringements</li>
+				<li>Copies signals from water referees clearly, so that players  can see them</li>
+			</ul>
+		</div>
+		<div class='box' id='timekeeper'>
+			<h3>Time-keeper/Scorer</h3>
+			<ul>
+				<li>Can be multiple people, but is usualy just one</li>
+				<li>Starting timer for penalised player</li>
+				<li>Recording score</li>
+				<li>Stoping match clock during last two minutes of game when there is a break, except after goal is scored</li>
+			</ul>
+		</div>
+ 
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

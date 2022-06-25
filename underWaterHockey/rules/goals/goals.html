@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Goals</title>
+		<link rel="stylesheet" type="text/css" href="../../allcss.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../../underWaterHockey.html>Home</a>
+  			<a href=../../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../rules.html>Rules</a>
+  			<a href=../../refereeing/refereeing.html>Refereeing</a>
+  			<a href=../../equipment/equipment.html>Equipment</a>
+		</div>
+
+<div id='goalsgoals'>
+		<div class='box' id='goal'>
+			<h1 class='subtitle'>Goals</h1>
+			<p class="text">If the puck lands fully in the trough of the goal on against the back of the goal, then that is considered a successful goal. It’s still considered a successful goal if it bouncing out, or is pushed out.
+				<br /><br />
+				The images below are all examples of goals:
+			</p>
+		</div>
+		<div id='goalimg'>
+		<img class='goalimg' src="images/goal1.jpg">
+		<img class='goalimg' src="images/goal2.jpg">
+		<img class='goalimg' src="images/goal3.jpg">
+		<img class='goalimg' src="images/goal4.jpg">
+		<img class='goalimg' src="images/goal5.jpg">
+		<img class='goalimg' src="images/goal6.jpg">
+		<img class='goalimg' src="images/goal7.jpg">
+		<img class='goalimg' src="images/goal8.jpg">
+		</div>
+</div>
+
+		<div class='box' id='nogoal'>
+			<h1 class="subtitle">No Goals</h1>
+			<p class="text">If the puck is on the ramp, or not fully in the trough, then it is considered an unsuccessful goal. It is also an unsuccessful goal if goes over the goal.
+				<br /><br />
+				The images below are all examples of no goals:
+			</p>
+		</div>
+		<div id='nogoalimg'>
+		<img class='nogoalimg' src="images/nogoal1.jpg">
+		<img class='nogoalimg' src="images/nogoal2.jpg">
+		<img class='nogoalimg' src="images/nogoal3.jpg">
+		<img class='nogoalimg' src="images/nogoal4.jpg">
+
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

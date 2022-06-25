@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cap</title>
+		<link rel="stylesheet" type="text/css" href="cap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../../underWaterHockey.html>Home</a>
+  			<a href=../../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../../rules/rules.html>Rules</a>
+  			<a href=../../refereeing/refereeing.html>Refereeing</a>
+  			<a href=../equipment.html>Equipment</a>
+		</div>
+
+		<div class='box' id='caps'>
+			<h3>Caps</h3>
+			<p>Caps are worn by all players to identify them as an individual, and as part of their team. Caps are also used to provide ear protection.</p>
+		</div>
+		<img class='box' id='capImg' src="images/cap.jpg" alt='An image of a cap'>
+		<div class='box' id='requirements'>
+			<h4>Requirements</h4>
+			<ul>
+				<li>Must have a unique number from 1-14 that no one else in the team has</li>
+				<li>Must be either black(dark blue) or white, and match the color you are playing as</li>
+				<li>Must have ear protection</li>
+				<li>Ear protection must be firm polythylene or rubber</li>
+			</ul>
+		</div>
+ 
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stick</title>
+		<link rel="stylesheet" type="text/css" href="stick.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../../underWaterHockey.html>Home</a>
+  			<a href=../../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../../rules/rules.html>Rules</a>
+  			<a href=../../refereeing/refereeing.html>Refereeing</a>
+  			<a href=../equipment.html>Equipment</a>
+		</div>
+
+		<div class='box' id='sticks'>
+			<h3>Sticks</h3>
+			<p>Sticks are small sticks that push the puck along the bottom of the pool. There are many different styles of sticks, for different playing styles.</p>
+		</div>
+		<img class='box' id='stickImg' src="images/stick.jpg" alt='An image of a stick'>
+		<div class='box' id='requirements'>
+			<h4> Requirements</h4>
+			<ul>
+				<li>Must not protude from the hand by more then 25mm</li>
+				<li>Must be black or white; matching the color you are playing as</li>
+				<li>May have markings in contrasting colors for identification purposes if not distracting or confusing</li>
+			</ul>
+		</div>
+
+		<div class='box' id='morerequirements'>
+			<h4>More complicated requirements</h4>
+			<p>If you are buying a stick and not making one your self you don't have to worry about these requirements</p>
+			<ul>
+				<li>Must be made from wood, plastic, or approved material</li>
+				<li>Must be able to fit, laying flat in a box that is 100mm wide x 350mm long x 50mm deep</li>
+				<li>Must have a corner radius of at least 10mm</li>
+				<li>Must be considered safe play</li>
+				<li>Edges must be rounded</li>
+				<li>Must not be capable or surrounding the puck or any part of hand</li>
+				<li>Must not be able to encapsulate puck by more then 50%</li>
+				<li>Must not protude from the hand by more then 25mm</li>
+				<li>Must be black or white</li>
+				<li>May have markings in contrasting colors for identification purposes if not distracting</li>
+				
+			</ul>
+		</div>
+		<footer>.</footer>
+ 
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

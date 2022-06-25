@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Snorkel</title>
+		<link rel="stylesheet" type="text/css" href="snorkel.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../../underWaterHockey.html>Home</a>
+  			<a href=../../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../../rules/rules.html>Rules</a>
+  			<a href=../../refereeing/refereeing.html>Refereeing</a>
+  			<a href=../equipment.html>Equipment</a>
+		</div>
+
+		<div class='box' id='snorkels'>
+			<h3>Snorkels</h3>
+			<p>Snorkels are used by all players to being able to watch the game, while still being able to breath. Snorkels are normally attached to the mask, but can also be attached to the cap.</p>
+		</div>
+		<img class='box' id='snorkelImg' src="images/snorkel.jpeg" alt='An image of a snorkel'>
+		<div class='box' id='requirements'>
+			<h4>Requirements</h4>
+			<ul>
+				<li>No sharp edges</li>
+				<li>Can't be made out of metal</li>
+				<li>Must be pliable / be able to flex</li>
+			</ul>
+		</div>
+ 
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

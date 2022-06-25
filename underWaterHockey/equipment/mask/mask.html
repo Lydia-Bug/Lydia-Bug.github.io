@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mask</title>
+		<link rel="stylesheet" type="text/css" href="mask.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../../underWaterHockey.html>Home</a>
+  			<a href=../../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../../rules/rules.html>Rules</a>
+  			<a href=../../refereeing/refereeing.html>Refereeing</a>
+  			<a href=../equipment.html>Equipment</a>
+		</div>
+
+		<div class='box' id='masks'>
+			<h3>Masks</h3>
+			<p>A mask is worn by all players, that covers the eyes, and nose. This makes seeing underwater a lot easier, and protects the players from headshots.</p>
+		</div>
+		<img class='box' id='maskImg' src="images/mask.jpg" alt='An image of a mask'>
+		<div class='box' id='requirements'>
+			<h4>Requirements</h4>
+			<ul>
+				<li>Must have a dual lens design, or have a center divider/support that is part of the frame of the mask</li>
+				<li>Lens must be made out of safty glass, or other safty material</li>
+				<li>Lens can't be made out of glass</li>
+				<li>No metal, or metal buckles</li>
+				<li>Do sharp edges</li>
+			</ul>
+		</div>
+ 
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

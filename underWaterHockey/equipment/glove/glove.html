@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Glove</title>
+		<link rel="stylesheet" type="text/css" href="glove.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">	
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../../underWaterHockey.html>Home</a>
+  			<a href=../../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../../rules/rules.html>Rules</a>
+  			<a href=../../refereeing/refereeing.html>Refereeing</a>
+  			<a href=../equipment.html>Equipment</a>
+		</div>
+
+		<div class='box' id='gloves'>
+			<h3>Gloves</h3>
+			<p>A glove must be be worn to protect the players hand, from the bottom of the pool, and the puck. Players must wear a glove on their hand which is holding the stick, and they may also wear another glove on their other hand.</p>
+		</div>
+		<img class='box' id='gloveImg' src="images/glove.jpg" alt='An image of a glove'>
+		<div class='box' id='requirements'>
+			<h4>Requirements</h4>
+			<ul>
+				<li>No webbing between fingers</li>
+				<li>Must not aid in swimming</li>
+				<li>No rigid or sharp reinforcing material</li>
+				<li>Must strongly contrast wit the color of the players stick and the color of the puck being used</li>
+				<li>Must not be bright orange, pink, or yellow</li>
+			</ul>
+		</div>
+		<div class='box' id='wheretoget'>
+			<h4>Where to get gloves?</h4>
+			<p>Underwater hockey gloves aren’t commonly sold in stores, you can buy them at <a href='http://www.divehq.co.nz/'>DiveHQ</a>, <a href='https://hydrouwh.com/'>HydroUWH</a> and online, for around $60.<br />You can also chose to make your glove yourself</p>
+		</div>
+		<a href='http://www.bradgrissom.com/uwh/Glovemaking.html'><h1 class='box' id='makeyourown'>Make your own glove</h1></a>
+ 
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {s
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

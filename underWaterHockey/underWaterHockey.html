@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UWHUnofficialNZ</title>
+		<link rel="stylesheet" type="text/css" href="allcss.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a class="active" href=./underWaterHockey.html>Home</a>
+  			<a href=./howtoplay/howtoplay.html>How to play</a>
+  			<a href=./rules/rules.html>Rules</a>
+  			<a href=./refereeing/refereeing.html>Refereeing</a>
+  			<a href=./equipment/equipment.html>Equipment</a>
+		</div>
+		<div id='toprow'>
+			<img id='frontpagepic' class='box' src="frontpagepic.jpg">
+			<h3 id='welcometo' class='box'>Welcome to Under Water Hockey Unofficial NZ!<br /><br />The unofficial website for all things under water hockey!</h3>
+		</div>
+
+		<div id='bottomrow'>
+			<a href='howtoplay/howtoplay.html'><div id='new' class="box">
+				<h4 class='title'>New?</h4>
+				<p class='subtitle'>Learn how under water hockey works!</p>
+			</div></a>
+			<a href='rules/rules.html'><div id='experienced' class="box">
+				<h4 class='title'>Experienced?</h4>
+				<p class='subtitle'>Learn all of the rules!</p>
+			</div></a>
+		</div>
+
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

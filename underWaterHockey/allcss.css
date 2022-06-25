@@ -1,0 +1,371 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f2;
+  margin: 0px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+/*-----------------------------------------------------*/
+#BigHeading{
+  font-weight: 200;
+}
+
+.header {
+  margin: auto;
+  width: 70%;
+  background-image: url("images/header.jpg");
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-bottom: 1px;
+  font-family: 'Poiret One', cursive;
+  font-size: 30px;
+}
+
+#navbar {
+  z-index: 100;
+  font-size: 30px;
+  width: 70%;
+  margin: auto;
+  font-family: 'Poiret One', cursive;
+  overflow: hidden;
+  background-image: url("images/navbar.jpg");
+}
+
+.sticky {
+  left: 15%;
+  position: fixed;
+  top: 0;
+}
+
+#navbar a {
+  margin-left: 25px;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#navbar a.active {
+  background-color: #f1f1f2;
+  color: black;
+}
+/*---------------------------------------------------*/ 
+.box{
+  background: #a1d6e2;
+  font-family: 'Economica', sans-serif;
+  font-weight: 100;
+  text-align: center;
+  width: 34%;
+  position: relative;
+  background-color: #a1d6e2;
+}
+.subtitle{
+  font-size: 3vw;
+  padding: 1vw, 0.5vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  font-weight: 100;
+}
+.text{
+  padding-left: 0;
+  list-style-position: inside;
+  font-size: 1vw;
+  font-family: sans-serif;
+  padding: 1vw;
+  font-weight: 100;
+}
+/*--------------- Front Page ---------------*/
+.title{
+  font-size: 6vw;
+  font-weight: 200;
+}
+#toprow{
+  height: 35vw;
+  overflow: hidden;
+}
+#frontpagepic{
+  margin-top: 2%;
+  margin-left: 15%;
+  width: 47%;
+}
+#welcometo{ 
+  font-family: 'Economica', sans-serif;
+  font-size: 2.65vw;
+  font-weight: 200;
+  margin-top: 2%;
+  padding: 3vw;
+  width: 21%;
+  float: right;
+  margin-right: 15%;
+  text-align: center;
+}
+/*------*/
+#bottomrow{
+  text-align: center;
+  font-family: 'Economica', sans-serif;
+}
+#new, #experienced{
+  width: 34%;
+  background-size: 100%;
+  padding: 1px
+}
+#new{
+  background-image: url("new.jpg");
+  margin-left: 15%;
+  margin-top: 2%;
+  margin-bottom: -24vw;
+}
+#new h4{
+  margin-bottom: 1vw;
+}
+#experienced h4{
+  margin-bottom: 4.5vw;
+}
+#experienced{
+  background-image: url("experienced.jpg");
+  position: relative;
+  left: 51%;
+}
+/*--------------- How to play ---------------*/
+#summary{
+  margin-left: 15%;
+  margin-top: 2vw;
+  padding: 1vw;
+  margin-bottom: -38vw
+}
+iframe{
+  margin-left: 51%;
+}
+#positions{
+  margin-left: 51%;
+  margin-top: 2vw;
+  padding: 1vw;
+  margin-bottom: -13vw;
+}
+#rules{
+  background-image: url("images/rules.jpeg");
+  margin-left: 15%;
+  padding-bottom: 0.5vw;
+  margin-bottom: 7vw;
+}
+/*--------------- Rules ---------------*/
+#infringements{
+  width: 34%;
+  font-size: 3.5vw;
+  padding: 2vw 5vw;
+  margin-left: 15%;
+  margin-bottom: -13.8vw;
+  background-image: url("rules/images/signals.jpg");
+  background-size: cover;
+}
+/*----------------------*/
+#rules1{
+  width: 34%;
+  margin-left: 51%;
+  font-size: 2vw;
+  padding: 1.5vw;
+}
+/*----------------------*/
+#rules2{
+  width: 34%;
+  margin-left: 51%;
+  font-size: 2vw;
+  padding: 1.5vw;
+  margin-bottom: -2vw;
+}
+/*----------------------*/
+#goals{
+  width: 22%;
+  margin-left: 15%;
+  margin-bottom: -15.5vw;
+  font-size: 3.5vw;
+  padding: 4vw 2vw;
+  background-image: url("rules/images/goals.jpg");
+  background-size: cover;
+}
+/*----------------------*/
+#pucks{
+  width: 22%;
+  margin-left: 39%;
+  margin-bottom: -15.5vw;
+  font-size: 3.5vw;
+  padding: 2vw;
+  background-image: url("rules/images/advantage.jpg");
+  background-size: cover;
+}
+/*----------------------*/
+#penaltys{
+  width: 22%;
+  margin-left: 63%;
+  font-size: 3.5vw;
+  padding: 2vw;
+
+  background-image: url("rules/images/penaltygoals.jpg");
+  background-size: cover;
+}
+/*------------- Goals -------------*/
+#goal{
+  margin-left: 15%;
+  padding: 1vw;
+  margin-top: 2vw;
+}
+#goalimg{
+  width: 34%;
+  margin-left: 15%;
+}
+.goalimg{
+  width: 100%;
+  margin-top: 1vw;
+}
+#goalsgoals{
+  margin-bottom: -129.2vw;
+}
+#nogoal{
+  margin-left: 51%;
+  padding: 1vw;
+  margin-top: 2vw;
+}
+#nogoalimg{
+  width: 34%;
+  margin-left: 51%;
+}
+.nogoalimg{
+  width: 100%;
+  margin-top: 1vw;
+}
+/*------------- Equal Advantage -------------*/
+#equal{
+  margin-left: 15%;
+}
+#playequal{
+  margin-left: 15%;
+  margin-bottom: -23vw;
+}
+#advantage{
+    margin-left: 51%;
+}
+#playadvantage{
+  margin-left: 51%;
+}
+/*------------- Penalty Shot -------------*/
+#penaltyshot{
+  margin-left: 15%;
+}
+#penaltygoal{
+  margin-left: 15%;
+  margin-bottom: -29.9vw;
+}
+#setup{
+  margin-left: 51%;
+}
+#penaltyshotimg{
+  margin-left: 51%;
+}
+/*------------- Signals -------------*/
+#signalssummary{
+  font-family: 'Economica', sans-serif;
+  font-weight: 100;
+  text-align: center;
+  width: 70%;
+  position: relative;
+  background-color: #a1d6e2;
+  font-size: 1.75vw;
+  margin-left: 15%;
+  padding: 1vw;
+}
+.rectangle{
+  position: relative;
+  margin-left: 15%;
+  overflow: hidden;
+}
+.image{
+  padding: 2vw;
+  position: relative;
+  background-color: #a1d6e2;
+  width: 25%;
+}
+.image img{
+  width: 100%;
+}
+.words{
+  position: relative;
+  background-color: #a1d6e2;
+  padding: 2vw;
+  width: 58%;
+  margin-left: 25%;
+  bottom: 19.95vw;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+.words h6{
+  font-family: 'Economica', sans-serif;
+  text-decoration: underline;
+  font-size: 2vw;
+  padding: 0;
+  margin: 0;
+}
+.info{
+  font-size: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+-#puckoutofbounds{
+  margin-left: 15%;
+}
+
+#puckoutofbounds h3{
+  margin-bottom: 2.5vw;
+}
+/*-------------------------------*/
+#startplay{}
+#startplay h3{margin-bottom: 4.9vw;}
+#stopplay{bottom: 18vw;}
+#stopplay h4{margin-bottom: 8.25vw;}
+#time{bottom: 36vw;}
+#time h4{margin-bottom: 9.4vw;}
+#equalpuck{bottom: 54vw;}
+#equalpuck h3{margin-bottom: 4.9vw;}
+#timepenalty{bottom: 72vw;}
+#timepenalty h3{margin-bottom: 4.9vw;}
+#totaldismissal{bottom: 90vw;}
+#totaldismissal h4{margin-bottom: 5.9vw;}
+#signalgoal{bottom: 108vw;}
+#signalgoal h3{margin-bottom: 4.9vw;}
+#signalnogoal{bottom: 126vw;}
+#signalnogoal h4{margin-bottom: 8.2vw;}
+#penaltyshot{bottom: 144vw;}
+#penaltyshot h3{margin-bottom: 3.8vw;}
+#useoffreearm{bottom: 162vw;}
+#useoffreearm h4{margin-bottom: 7.1vw;}
+#barging{bottom: 180vw;}
+#barging h4{margin-bottom: 9.4vw;}
+#gloving{bottom: 198vw;}
+#gloving h4{margin-bottom: 8.25vw;}
+#stoppingpuck{bottom: 216vw;}
+#stoppingpuck h4{margin-bottom: 8.25vw;}
+#stickinfringment{bottom: 234vw;}
+#stickinfringment h4{margin-bottom: 8.2vw;}
+#substitution{bottom: 252vw;}
+#substitution h4{margin-bottom: 7.05vw;}
+#headshot{bottom: 270vw;}
+#headshot h4{margin-bottom: 8.2vw;}
+#breaking{bottom: 288vw;}
+#breaking h4{margin-bottom: 7.05vw;}
+#grabbing{bottom: 306vw;}
+#grabbing h4{margin-bottom: 7.05vw;}
+#advantagerule{bottom: 324vw;}
+#advantagerule h4{margin-bottom: 7.05vw;}
+#outofbounds{bottom: 342vw;}
+#outofbounds h4{margin-bottom: 7.05vw;}
+#delayofgame{bottom: 360vw;margin-bottom: -380vw;}
+#delayofgame h4{margin-bottom: 5.9vw;}
+footer{color: white;}

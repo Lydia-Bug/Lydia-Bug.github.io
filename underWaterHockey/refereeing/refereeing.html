@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Refereeing</title>
+		<link rel="stylesheet" type="text/css" href="refereeing.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../underWaterHockey.html>Home</a>
+  			<a href=../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../rules/rules.html>Rules</a>
+  			<a class="active" href=./refereeing.html>Refereeing</a>
+  			<a href=../equipment/equipment.html>Equipment</a>
+		</div>
+		<h6 class='box' id='titleofpage'>Refeereing</h6>
+		<div class='box' id='refereecode'>
+			<h3>Referee Oath</h3>
+			<p>I promise to referee in the Olympic spirit of peace and emotional understanding; and to enforce the rules of the World Underwater Hockey Federation fairly and consistently</p>
+		</div>
+		<div class='box' id='rules'>
+			<h4>Rules</h4>
+			<p>Referees should have a good understanding of the rules so they can implement them properly during games</p>
+		</div>
+		<a href=signals/signals.html><h6 class='box' id='signals'>Signals</h6></a>
+		<a href='cititations/cititations.html'>
+			<div class='box' id='cititations'>
+			<h4>Cititations</h4>
+			<p>Cautionings, time penaltys, and total dissmissals</p>
+			</div>
+		</a>
+		<a href='differentrefs/differentrefs.html'><h3 class='box' id='differentrefs'>Different types of referees</h3></a>
+<!--		<div id='pucksetups'>
+			<h2 class='setups' id='equal'>Equal pucks</h2>
+			<h2 class='setups' id='advantage'>Advantage pucks</h2>
+			<h2 class='setups' id='penaltyshot'>Penalty shots/goals</h2>
+		</div>
+-->
+		<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

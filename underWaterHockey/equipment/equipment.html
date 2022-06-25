@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Equipment</title>
+		<link rel="stylesheet" type="text/css" href="equipment.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Economica|Poiret+One" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+  			<h2 id='BigHeading'>Under Water Hockey Unofficial NZ</h2>
+		</div>
+		
+		<div id="navbar">
+  			<a href=../index.html>Home</a>
+  			<a href=../howtoplay/howtoplay.html>How to play</a>
+  			<a href=../rules/rules.html>Rules</a>
+  			<a href=../refereeing/refereeing.html>Refereeing</a>
+  			<a class="active" href=./equipment.html>Equipment</a>
+		</div>
+
+		<div id='toprow'>
+			<img id='box1' class='box' src="images/equipment.jpg" alt='Someone playing underwaterhockey'>
+			<h3 id='box2' class='box'>Under water hockey requires lots of equipment, and there are lots of rules about what type of equipmet you can play with</h3>
+		</div>
+
+		<div id='equipment'>
+			<a href=mask/mask.html><p id='mask' class='box'>Mask</p></a>
+
+			<a href=snorkel/snorkel.html><p id='snorkel' class='box'>Snorkel</p></a>
+
+			<a href=flipper/flipper.html><p id='flippers' class='box'>Fipper</p></a>
+
+			<a href=stick/stick.html><p id='stick' class='box'>Stick</p></a>
+
+			<a href=cap/cap.html><p id='cap' class='box'>Cap</p></a>
+				
+			<a href=glove/glove.html><p id='glove' class='box'>Glove</p></a>
+		</div>
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+			    navbar.classList.add("sticky")
+			  } else {
+			    navbar.classList.remove("sticky");
+			  }
+			}
+		</script>
+	</body>
+</html>

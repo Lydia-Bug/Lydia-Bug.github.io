@@ -1,0 +1,270 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f2;
+  margin: 0px;
+}
+
+a{
+  text-decoration: none;
+}
+/*-----------------------------------------------------*/
+#BigHeading{
+  font-weight: 200;
+}
+
+.header {
+  margin: auto;
+  width: 70%;
+  background-image: url("images/header.jpg");
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-bottom: 1px;
+  font-family: 'Poiret One', cursive;
+  font-size: 30px;
+}
+
+#navbar {
+  z-index: 100;
+  font-size: 30px;
+  width: 70%;
+  margin: auto;
+  font-family: 'Poiret One', cursive;
+  overflow: hidden;
+  background-image: url("images/navbar.jpg");
+}
+
+.sticky {
+  left: 15%;
+  position: fixed;
+  top: 0;
+}
+
+#navbar a {
+  margin-left: 25px;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#navbar a.active {
+  background-color: #f1f1f2;
+  color: black;
+}
+/*---------------------------------------------------*/
+#summary{
+  font-family: 'Economica', sans-serif;
+  font-weight: 100;
+  text-align: center;
+  width: 70%;
+  position: relative;
+  background-color: #a1d6e2;
+  font-size: 1.75vw;
+  margin-left: 15%;
+  padding: 1vw;
+}
+/*-----------------------*/
+.rectangle{
+  position: relative;
+  margin-left: 15%;
+  overflow: hidden;
+}
+/*-----------------------*/
+.image{
+  padding: 2vw;
+  position: relative;
+  background-color: #a1d6e2;
+  width: 25%;
+}
+.image img{
+  width: 100%;
+}
+/*-----------------------*/
+.words{
+  position: relative;
+  background-color: #a1d6e2;
+  padding: 2vw;
+  width: 58%;
+  margin-left: 25%;
+  bottom: 19.95vw;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+.words h6{
+  font-family: 'Economica', sans-serif;
+  text-decoration: underline;
+  font-size: 2vw;
+  padding: 0;
+  margin: 0;
+}
+.info{
+  font-size: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+/*-----------------------*/
+#puckoutofbounds{
+  margin-left: 15%;
+}
+
+#puckoutofbounds h3{
+  margin-bottom: 2.5vw;
+}
+/*-------------------------------*/
+#startplay{
+
+}
+#startplay h3{
+  margin-bottom: 4.9vw;
+}
+/*-----------------------*/
+#stopplay{
+  bottom: 18vw;
+}
+#stopplay h4{
+  margin-bottom: 8.25vw;
+}
+/*-----------------------*/
+#time{
+  bottom: 36vw;
+}
+#time h4{
+  margin-bottom: 9.4vw;
+}
+/*-----------------------*/
+#equalpuck{
+  bottom: 54vw;
+}
+#equalpuck h3{
+  margin-bottom: 4.9vw;
+}
+/*-----------------------*/
+#timepenalty{
+  bottom: 72vw;
+}
+#timepenalty h3{
+  margin-bottom: 4.9vw;
+}
+/*-----------------------*/
+#totaldismissal{
+  bottom: 90vw;
+}
+#totaldismissal h4{
+  margin-bottom: 5.9vw;
+}
+/*-----------------------*/
+#goal{
+  bottom: 108vw;
+}
+#goal h3{
+  margin-bottom: 4.9vw;
+}
+/*-----------------------*/
+#nogoal{
+  bottom: 126vw;
+}
+#nogoal h4{
+  margin-bottom: 8.2vw;
+}
+/*-----------------------*/
+#penaltyshot{
+  bottom: 144vw;
+}
+#penaltyshot h3{
+  margin-bottom: 3.8vw;
+}
+/*-----------------------*/
+#useoffreearm{
+  bottom: 162vw;
+}
+#useoffreearm h4{
+  margin-bottom: 7.1vw;
+}
+/*-----------------------*/
+#barging{
+  bottom: 180vw;
+}
+#barging h4{
+  margin-bottom: 9.4vw;
+}
+/*-----------------------*/
+#gloving{
+  bottom: 198vw;
+}
+#gloving h4{
+  margin-bottom: 8.25vw;
+}
+/*-----------------------*/
+#stoppingpuck{
+  bottom: 216vw;
+}
+#stoppingpuck h4{
+  margin-bottom: 8.25vw;
+}
+/*-----------------------*/
+#stickinfringment{
+  bottom: 234vw;
+}
+#stickinfringment h4{
+  margin-bottom: 8.2vw;
+}
+/*-----------------------*/
+#substitution{
+  bottom: 252vw;
+}
+#substitution h4{
+  margin-bottom: 7.05vw;
+}
+/*-----------------------*/
+#headshot{
+  bottom: 270vw;
+}
+#headshot h4{
+  margin-bottom: 8.2vw;
+}
+/*-----------------------*/
+#breaking{
+  bottom: 288vw;
+}
+#breaking h4{
+  margin-bottom: 7.05vw;
+}
+/*-----------------------*/
+#grabbing{
+  bottom: 306vw;
+}
+#grabbing h4{
+  margin-bottom: 7.05vw;
+}
+/*-----------------------*/
+#advantagerule{
+  bottom: 324vw;
+}
+#advantagerule h4{
+  margin-bottom: 7.05vw;
+}
+/*-----------------------*/
+#outofbounds{
+  bottom: 342vw;
+}
+#outofbounds h4{
+  margin-bottom: 7.05vw;
+}
+/*-----------------------*/
+#delayofgame{
+  bottom: 360vw;
+  margin-bottom: -380vw;
+}
+#delayofgame h4{
+  margin-bottom: 5.9vw;
+}
+/*-----------------------*/
+footer{
+  color: white;
+}
