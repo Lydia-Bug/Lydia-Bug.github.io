@@ -1,0 +1,374 @@
+/* CSS Document */
+/*-------- General ------------*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	color: black;
+}
+
+.oval{
+	border-width: 8px;
+}
+
+span{
+	display: inline-block;
+	overflow:hidden;
+}
+/*-------- Nav Bar ---------*/
+header{
+	width: 100%;
+	padding: 10px;
+}
+
+header span{
+	/*display: inline-block;
+	overflow:hidden;*/
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+header img{
+	width: 4vw;
+	max-width: 50px;
+	min-width: 40px;
+}
+
+header #Name_of_Webpage{
+	font-size: calc(3vw + 20px);
+} 
+@media screen and (min-width: 1250px){
+	header #Name_of_Webpage{
+		font-size: 57.5px;
+	}
+}
+
+header #buttons{
+	margin: auto;
+}
+
+header .nav_link{
+	padding: 10px;
+	width: 14vw;
+	font-size: calc(0.5vw + 12px);
+
+}
+@media screen and (min-width: 1250px){
+	header .nav_link{
+		font-size: 18.25px;
+	}
+}
+/*--------- Footer ----------------*/
+footer{
+	margin-top: 10px;
+	width: 100%;
+}
+
+#words_in_footer{
+	margin: auto;
+	width: 68%;
+	font-size: calc(20px + 0.1vw);
+	padding: 5px;
+}
+@media screen and (max-width: 1500px){
+	.index_page_table{
+		width: 1020px;
+	}
+}
+@media screen and (max-width: 1133px){
+	.index_page_table{
+		width: 90%;
+	}
+}
+
+#about_contact_copyright{
+	position: relative;
+	float: right;
+	font-size: 1.5em;
+}
+/*--------- Text ------------------*/
+.text{
+	font-size: calc(15px + 0.75vw);
+	margin: auto;
+	width: 70%;
+	padding: 50px;
+}
+@media screen and (min-width: 1500px){
+	.text{
+		font-size: 26.25px;
+	}
+}
+@media screen and (max-width: 1500px){
+	.text{
+		width: 1050px;
+	}
+}
+@media screen and (max-width: 1071.5px){
+	.text{
+		width: 98%;
+	}
+}
+
+.text p{
+	padding: 10px;
+	font-size: calc(10px + 1vw);
+}
+@media screen and (min-width: 1500px){
+	.text p{
+		font-size: 23px;
+	}
+}
+
+.text h1{
+	padding: 10px;
+	font-size: calc(25px + 1.5vw);
+}
+@media screen and (min-width: 1500px){
+	.text h1{
+		font-size: 47.5px;
+	}
+}
+
+.text img{
+	width: 100%;
+	padding: 10px;
+}
+
+.text table{
+	border-collapse: collapse;
+	width: 100%;
+	padding: 10px;
+}
+
+.text table, th, td{
+	border: 2px solid #252525;
+}
+
+.text td{
+	padding: calc(3px + 0.2vw);
+}
+/*
+@media screen and (max-width: 1500px){
+	.text img{
+		width: 1050px;
+	}
+}
+@media screen and (max-width: 1071.5px){
+	.text img{
+		width: 98%;
+	}
+}
+
+/*--------- Index Page ------------*/
+#question{
+	height: 400px;
+}
+
+#main_image{
+	object-fit: cover;
+	width: 100%;
+	height: 400px;
+}
+
+#question h1{
+	width: 60%;
+	margin: auto;
+	font-size: calc(40px + 7vw);
+	padding: 20px;
+	position: relative;
+	bottom: 360px;
+}
+@media screen and (min-width: 1500px){
+	#question h1{
+		font-size: 145px;
+	}
+}
+@media screen and (max-width: 1500px){
+	#question h1{
+		width: 900px;
+	}
+}
+@media screen and (max-width: 1000px){
+	#question h1{
+		width: 90%;
+	}
+}
+
+#arrow{
+	display: block;
+	position: relative;
+	width: calc(6vw + 30px);
+	max-width: 75vw;
+	margin: auto;
+	bottom: 330px;
+}
+
+/*table, tr, td{
+	border: 1px solid black;
+}*/
+
+.index_page_table{
+	width: 70%;
+	max-width: 2000px;
+	margin: auto;	
+}
+@media screen and (max-width: 1500px){
+	.index_page_table{
+		width: 1050px;
+	}
+}
+@media screen and (max-width: 1166px){
+	.index_page_table{
+		width: 90%;
+	}
+}
+
+.index_page_table td{
+	padding: 5px;
+	width: 50%;
+}
+
+.index_page_table table, tr, td{
+	border: 0px solid #252525;
+}
+
+.topic{
+	font-size: calc(60px + 2vw);
+	padding: 10px;
+	transition: transform .1s; /* Animation */
+}
+
+.topic:hover{
+	transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+.blurb{
+	font-size: calc(10px + 0.5vw);
+	padding: 20px;
+}
+
+/*------------ Articles ---------------*/
+#main_heading{
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+}
+
+#main_heading h1{
+	width: 100%;
+	font-size: calc(40px + 7vw);
+	padding: 20px;
+	position: relative;
+	bottom: 360px;
+	border-width: 8px;
+}
+@media screen and (min-width: 1500px){
+	#main_heading h1{
+		font-size: 145px;
+	}
+}
+
+/*---- About Contact Copyright ----*/
+#smaller_heading h1{
+	width: 100%;
+	font-size: calc(40px + 6vw);
+	padding: 20px;
+	margin-top: 10px;
+	border-width: 8px;
+}
+@media screen and (min-width: 1500px){
+	#smaller_heading h1{
+		font-size: 130px;
+	}
+}
+
+
+@media only screen and (max-device-width: 480px) {
+      #mobile {
+        display: block;
+      }
+      #browser {
+        display: none;
+		  
+      }
+    }
+
+ @media only screen and (min-device-width: 481px) {
+      #mobile {
+        display: none;
+      }
+      #browser {
+        display: block;
+      }
+    }
+
+/*-------------- Copyright --------------------*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-device-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-device-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/*------- Form -------*/
+.form{
+	width: 99%;
+	border-radius: 3px;
+
+	font-size: calc(10px + 0.75vw);
+	margin: auto;
+	padding: 5px;
+}
+
+input{
+	border-radius: 3px;
+	font-size: calc(8px + 0.6vw);
+	margin: auto;
+	padding: 5px;
+}

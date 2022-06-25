@@ -1,0 +1,1 @@
+$dbconn = @mysqli_connect('localhost', 'root', '', 'db_yr12dgm2');

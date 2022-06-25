@@ -1,0 +1,108 @@
+/* CSS Document */
+*{
+	font-weight: normal;
+}
+
+body{
+	background-color: #ffdd7f;
+}
+
+header, footer{
+	background-color: #e16036;
+}
+
+#in_text_link{
+	text-decoration: underline;
+	color: #3366BB;
+}
+
+.bold{
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+.heading{
+	font-family: 'Economica', sans-serif;
+}
+
+.regular_words{
+	font-family: 'Rubik', sans-serif;
+}
+
+.button option{
+	font-family: 'Rubik', sans-serif;
+}
+
+.main_heading .heading{
+	border-style: solid;
+	border-radius: 0px;
+	text-align: center;
+	border-color: #ff9c3a;
+	background-color: #ffca3a;
+}
+
+
+.oval{
+	border-style: solid;
+	text-align: center;
+	border-radius: 200px;
+	border-color: #ff9c3a;
+	background-color: #ffca3a;
+}
+
+#smaller_heading h1, #main_heading h1{
+	border-top-style: solid;
+	border-bottom-style: solid;
+	text-align: center;
+	border-color: #ff9c3a;
+	background-color: #ffca3a;
+}
+
+table p{
+	background-size: cover;
+}
+
+#php{
+	border: solid;
+}
+
+.topic.environment{
+	background-image: url("../Images/environment_button.jpg");
+}
+.environment{
+	border-color: #f0a202;
+}
+.blurb.environment{
+	background-color: #f0a202;
+}
+
+.topic.convenience{
+	background-image: url("../Images/convenience_button.jpg");
+}
+.convenience{
+	border-color: #f99531;
+}
+.blurb.convenience{
+	background-color: #f99531;
+}
+
+.topic.health{
+	background-image: url("../Images/health_button.jpg");
+}
+.health{
+	border-color: #ffb238;
+}
+.blurb.health{
+	background-color:  #ffb238;
+}
+
+.topic.money{
+	background-image: url("../Images/money_button.jpg");
+}
+.money{
+	border-color: #ff9505;
+}
+.blurb.money{
+	background-color: #ff9505;
+}
+
