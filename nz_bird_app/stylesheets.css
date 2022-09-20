@@ -1,0 +1,271 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+p, h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    background-color: white;
+}
+
+
+
+
+/* Header and Footer */
+
+header, footer{
+    background-color: rgb(173, 201, 127);
+    padding: 0.5em;
+    text-align: center;
+}
+
+header{
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* to position footer at bottom always */
+body{
+    position: relative;
+    min-height: 100vh;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+main{
+    padding-bottom: 2.5em;
+}
+
+
+
+/* Filter */
+
+#filter{
+    background-color: rgb(245, 245, 245);
+    padding: 1em;
+    margin-bottom: 2em;
+
+    height: 100%;
+   
+    
+}
+
+#filter h2, #filter p{
+    padding-top: 0.5em;
+}
+
+#filter input, #filter select, #filter button{
+    width: 100%;
+    padding: 0.2em;
+    
+}
+
+#search{
+    padding-bottom: 2em;
+}
+
+#filterButton{
+    background-color: rgb(173, 201, 127);
+    border: none;
+    font-size: 1em;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    display: block;
+}
+
+#filterButton:hover{
+    background-color: rgb(194, 211, 167);
+}
+
+/* open filters button */
+#openFiltersButton{
+    
+    position: absolute;
+    left: 50%;
+    border: none;
+    background-color: rgb(0,0,0,0);
+}
+
+#openFiltersButton img{
+    width: 5em;
+}
+
+/* Information Card */
+
+.info_card{
+    margin: auto;
+    margin-bottom: 2em;
+    padding: 1em;
+    width: 90%;
+
+    background-color: rgb(245, 245, 245);
+    box-shadow: 5px 5px rgb(201, 201, 201);
+}
+
+@media only screen and (min-width: 800px){
+    #cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .info_card{
+        width: 30em;
+        margin: 1em;
+    }
+}
+
+
+.info_card img{
+    width: 100%;
+    box-shadow: 5px 5px rgb(218, 218, 218);
+}
+
+.photo{
+    position: relative;
+}
+
+.colour_circle{
+    height: 0.9em;
+    width: 0.9em;
+    border-radius: 50%;
+    display: inline-block;
+
+}
+
+.conservation_status{
+    position: absolute;
+    bottom: 0%;
+
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(247, 247, 247, 0.8);
+}
+
+.imformation{
+   /* display: flex;*/
+    margin-top: 1em;
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.imformation p{
+    padding-bottom: 0.2em;
+}
+
+.names{
+    font-size: 2em;
+    flex-direction: row;
+    margin-right:  1em;
+}
+
+.stats_and_cats{
+    flex-direction: row;
+}
+
+.label{
+    font-weight: bold;
+}
+
+/* Top Button */
+
+#topButton{
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    border: none;
+    background-color: rgb(0,0,0,0);
+}
+
+#topButton img{
+    width: 5em;
+}
+
+
+/* Layout */
+@media only screen and (max-width: 720px){
+    #filter{
+        width: 80%;
+        right: 100%;
+        position: fixed;
+        z-index: 99;
+        top: 0;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    main{
+        /*display: flex;*/
+        display : grid;
+        grid-template-columns: 330px 1fr;
+        align-items: flex-start;
+    }
+    header{
+        font-size: 2em;
+    }
+    #filter{
+        margin-bottom: 0;
+        
+    }
+    #openFiltersButton{
+        display: none;
+    }
+
+}
+
+/* Conservation Status Colors */
+
+.Not_Threatened{
+    background-color:  #02a028;
+}
+
+.Naturally_Uncommon{
+    background-color: #649a31;
+}
+
+.Relict {
+    background-color: #99cb68;
+}
+
+.Recovering {
+    background-color: #fecc33;
+}
+
+.Declining {
+    background-color: #fe9a01;
+}
+
+.Nationally_Increasing {
+    background-color: #c26967;
+}
+
+.Nationally_Vulnerable {
+    background-color: #9b0000;
+}
+
+.Nationally_Endangered {
+    background-color: #660032;
+}
+
+.Nationally_Critical {
+    background-color: #320033;
+}
+
+.Extinct {
+    background-color: black;
+}
+
+.Data_Deficient{
+    background-color: black;
+}

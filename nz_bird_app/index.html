@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets.css">
+    <script src="javascript.js"></script> 
+    <title>NZBirds</title>
+
+    <template id="info_card_template">
+        <div class="info_card">
+            <div class="photo">
+                <img>
+                <p class = "conservation_status">
+                    <span class="colour_circle"></span>
+                    <span class="status_words"></span>
+                </p>
+            </div>
+            <div class="imformation">
+                <div class="names">
+                    <p class="primary_name"></p>
+                    <p class="english_name"></p>
+                </div>
+                <div class="stats_and_cats">
+                    <p class="scientific_name"><span class="label">Scientific name: </span><span class="scientific_name_word"></span></p>
+                    <p class="order"><span class="label">Order: </span><span class="order_word"></span></p>
+                    <p class="family"><span class="label">Family: </span><span class="family_word"></span></p>
+                    <p class="length"><span class="label">Length: </span><span class="length_word"></span></p>
+                    <p class="weight"><span class="label">Weight: </span><span class="weight_word"></span></p>
+                    <p class="credit"></p>
+                </div>
+            </div>
+        </div>
+    </template>
+</head>
+<body>
+    <header>
+        <h1>Birds of Aotearoa</h1>
+    </header>
+    <main>
+        <div id="filter">
+            <div id="search">
+                <h2>Filter Birds</h2>
+                <p>Search</p>
+                <input type="text" placeholder="Search.." name="search">
+                <p>Conservation Status</p>
+                <select name="Conservation Status" id="status_menu">
+                    <option value="All">All</option>
+                    <option value="Not Threatened">Not Threatened</option>
+                    <option value="Naturally Uncommon">Naturally Uncommon</option>
+                    <option value="Relict">Relict</option>
+                    <option value="Recovering">Recovering</option>
+                    <option value="Declining">Declining</option>
+                    <option value="Nationally Increasing">Nationally Increasing</option>
+                    <option value="Nationally Vulnerable">Nationally Vulnerable</option>
+                    <option value="Nationally Endangered">Nationally Endangered</option>
+                    <option value="Nationally Critical">Nationally Critical</option>
+                    <option value="Extinct">Extinct</option>
+                    <option value="Data Deficient">Data Deficient</option>
+                </select>
+                <p>Sort by</p>
+                <select name="Sort by..." id="sort_by">
+                    <option value="Default">Default</option>
+                    <option value="primary_name">Maori Name</option>
+                    <option value="english_name">English Name</option>
+                    <option value="scientific_name">Scientific name</option>
+                    <option value="order">Order</option>
+                    <option value="family">Family</option>
+                    <option value="length">Length</option>
+                    <option value="weight">Weight</option>
+                    <option value="credit">Photographer</option>
+                </select>
+                <button type="button" id="filterButton">Filter Results</button> 
+                <p id="how_many_results"></p>
+            </div>
+
+            <button id="openFiltersButton"><img src="open_filter.png" alt="open filters"></button> 
+
+            <div id="status_key">
+                <h2>Conservation Status</h2>
+                <p><span class="colour_circle Not_Threatened"></span><span> Not Threatened</span></p>
+                <p><span class="colour_circle Naturally_Uncommon"></span><span> Naturally Uncommon</span></p>
+                <p><span class="colour_circle Relict"></span><span> Relict</span></p>
+                <p><span class="colour_circle Recovering"></span><span> Recovering</span></p>
+                <p><span class="colour_circle Declining"></span><span> Declining</span></p>
+                <p><span class="colour_circle Nationally_Increasing"></span><span> Nationally Increasing</span></p>
+                <p><span class="colour_circle Nationally_Vulnerable"></span><span> Nationally Vulnerable</span></p>
+                <p><span class="colour_circle Nationally_Endangered"></span><span> Nationally Endangered</span></p>
+                <p><span class="colour_circle Nationally_Critical"></span><span> Nationally Critical</span></p>
+                <p><span class="colour_circle Extinct"></span><span> Extinct</span></p>
+                <p><span class="colour_circle Data_Deficient"></span><span> Data Deficient</span></p>
+                <p>Conservation status from <a href="https://www.doc.govt.nz/nature/conservation-status/">DOC website</a></p>
+            </div>
+
+            
+        </div>
+        <div id="cards">
+            <!-- Js places cards here-->
+        </div>
+    </main>
+
+    <button id="topButton"><img src="back_to_top.png" alt="go back to top"></button> 
+   
+    <footer>
+        <p>Data licensed from <a href="https://www.birdsnz.org.nz/ ">Birds New Zealand</a> for educational use within the University of Otago</p>
+    </footer>
+</body>
+</html>
